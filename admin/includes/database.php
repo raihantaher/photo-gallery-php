@@ -17,19 +17,8 @@ class Database {
 
     }
 
-    public function query(){
-        $result = mysqli_query($this->conn, "SELECT * FROM users");
-
-        return $result;
+    public function query($sql){
+        return mysqli_query($this->conn, $sql);
     }
 
 }
-
-$database = new Database;
-
-$res = $database->query();
-
-while($row = mysqli_fetch_array($res)){
-    echo $row['username'];
-}
-
