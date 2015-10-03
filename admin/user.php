@@ -38,6 +38,16 @@
 
                             ?>
                         </p>
+                        <p>_________________</p>
+                        <p><?php
+
+                            $res = Users::find_by_id(1);
+
+                            while($row = mysqli_fetch_array($res)){
+                                echo $row['username'];
+                            }
+
+                            ?></p>
                     </div>
                 </div>
                 <!-- /.row -->
