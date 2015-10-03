@@ -32,22 +32,24 @@
 
                             $result = Users::find_all_users();
 
-                            while($row = mysqli_fetch_array($result)){
-                                echo $row['username'] . "<br />";
+                            foreach($result as $row){
+                                echo $row->username."<br>";
                             }
 
                             ?>
                         </p>
                         <p>_________________</p>
-                        <p><?php
+                        <p>
+                            <?php
 
                             $res = Users::find_by_id(1);
 
-                            while($row = mysqli_fetch_array($res)){
-                                echo $row['username'];
+                            foreach($res as $r){
+                                echo $r->username;
                             }
 
-                            ?></p>
+                            ?>
+                        </p>
                     </div>
                 </div>
                 <!-- /.row -->
