@@ -1,8 +1,8 @@
 <?php
 
-class User {
+class Users {
 
-    public function find_all_users(){
+    public static function find_all_users(){
         $database = new Database;
 
         $result = $database->query("SELECT * FROM users");

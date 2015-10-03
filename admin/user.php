@@ -29,12 +29,12 @@
                         <p>
 
                             <?php
-/*
-                            $result = User::find_all_users();
+
+                            $result = Users::find_all_users();
 
                             while($row = mysqli_fetch_array($result)){
                                 echo $row['username'] . "<br />";
-                            }*/
+                            }
 
                             ?>
                         </p>

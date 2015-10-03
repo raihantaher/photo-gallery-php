@@ -30,7 +30,7 @@
 </head>
 
 <body>
+<?php include('init.php'); ?>
 
     <div id="wrapper">
 
-        <?php include('init.php') ?>
