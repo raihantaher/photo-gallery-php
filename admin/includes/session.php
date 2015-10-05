@@ -2,8 +2,6 @@
 
 class Session {
 
-    // test
-
     private $signed_in = false;
     public  $user_id;
     public  $the_message;
