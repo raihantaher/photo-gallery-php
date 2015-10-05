@@ -13,7 +13,9 @@ class Users {
     }
 
     public static function find_by_id($id){
-        return self::execute_query("SELECT * FROM users WHERE id=$id LIMIT 1");
+        $the_result_array = self::execute_query("SELECT * FROM users WHERE id=$id LIMIT 1");
+
+        return !empty($the_result_array) ? array_shift($the_result_array) : false;
     }
 
     private function execute_query($sql){
@@ -36,10 +38,21 @@ class Users {
         $a_user = new self;
 
         foreach($result as $key => $value){
-            $a_user->$key = $value;
+            if($a_user->check_has_attribute($key)){
+                $a_user->$key = $value;
+            }
+
         }
 
         return $a_user;
+    }
+
+    private function check_has_attribute($the_attribute){
+
+        $object_properties = get_object_vars($this);
+
+        return array_key_exists($the_attribute, $object_properties);
+
     }
 
 }

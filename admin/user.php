@@ -44,9 +44,8 @@
 
                             $res = Users::find_by_id(1);
 
-                            foreach($res as $r){
-                                echo $r->username;
-                            }
+
+                                echo $res->username;
 
                             ?>
                         </p>
