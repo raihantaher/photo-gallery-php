@@ -21,6 +21,7 @@ if(isset($_POST['submit'])){
         $the_message = "Your username or password is incorrect";
     }
 } else{
+    $the_message = "";
     $username = "";
     $password = "";
 }
