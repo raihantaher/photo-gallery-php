@@ -47,6 +47,23 @@ class User {
         return $a_user;
     }
 
+    public static function verify_user($username, $password){
+        $database = new Database;
+
+        $username = $database->escape_string($username);
+        $password = $database->escape_string($password);
+
+        $sql = "SELECT * FROM users WHERE ";
+        $sql .= "username = '{$username}' ";
+        $sql .= "AND password = '{$password}' ";
+        $sql .= "LIMIT 1";
+
+        $the_result_array = self::execute_query($sql);
+
+        return !empty($the_result_array) ? array_shift($the_result_array) : false;
+
+    }
+
     private function check_has_attribute($the_attribute){
 
         $object_properties = get_object_vars($this);
