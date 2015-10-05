@@ -10,7 +10,7 @@ class Session {
         $this->check_login();
     }
 
-    private function is_signed_in(){
+    public function is_signed_in(){
         return $this->signed_in;
     }
 

@@ -16,3 +16,7 @@ function __autoload($class){
 
 
 }
+
+function redirect_to($page){
+    header("Location: {$page}");
+}
