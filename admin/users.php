@@ -30,7 +30,7 @@
 
                             <?php
 
-                            $result = Users::find_all_users();
+                            $result = User::find_all_users();
 
                             foreach($result as $row){
                                 echo $row->username."<br>";
@@ -42,10 +42,10 @@
                         <p>
                             <?php
 
-                            $res = Users::find_by_id(1);
+                            $res = User::find_by_id(1);
 
+                            echo $res->username;
 
-                                echo $res->username;
 
                             ?>
                         </p>
